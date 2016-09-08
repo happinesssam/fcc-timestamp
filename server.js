@@ -8,7 +8,6 @@ var monthNames = [
   "August", "September", "October",
   "November", "December"
 ];
-
 app.get('/:dateString', function (req, res) {
     var tryNum = Number(req.params.dateString);
     var date;
@@ -23,6 +22,9 @@ app.get('/:dateString', function (req, res) {
     }else{
         res.send({ "unix": null, "natural": null });
     }
+});
+app.get('/', function (req, res) {
+    res.send({ "unix": null, "natural": null });
 });
 var port = process.env.PORT || 8080;
 app.listen(port);
