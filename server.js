@@ -24,5 +24,5 @@ app.get('/:dateString', function (req, res) {
         res.send({ "unix": null, "natural": null });
     }
 });
-
-app.listen(8080);
+var port = process.env.PORT || 8080;
+app.listen(port);
